@@ -1,13 +1,13 @@
 # Healthcare Services API
 
-This is a simple API for managing healthcare services using **Node.js**, **Express**, and **MongoDB**. The API allows users to create, read, update, and delete (CRUD) healthcare services.
+This API is designed for managing healthcare services using **Node.js**, **Express**, and **MongoDB**. It provides a simple interface to create, read, update, and delete (CRUD) healthcare services.
 
 ## Features
 
-- Add a new healthcare service
-- Get a list of all healthcare services
-- Update an existing healthcare service
-- Delete a healthcare service
+- **Add a new healthcare service**
+- **Get a list of all healthcare services**
+- **Update an existing healthcare service**
+- **Delete a healthcare service**
 
 ## Technologies Used
 
@@ -17,7 +17,7 @@ This is a simple API for managing healthcare services using **Node.js**, **Expre
 
 ## Prerequisites
 
-Make sure you have the following installed on your system:
+Ensure you have the following installed on your system:
 
 - [Node.js](https://nodejs.org/) (v14+)
 - [MongoDB](https://www.mongodb.com/) (running locally or using MongoDB Atlas)
@@ -29,15 +29,20 @@ Make sure you have the following installed on your system:
 
 ```bash
 git clone https://github.com/ameya-kanchan/Healthcare-API.git
-cd healthcare-services-api
+cd healthcare-api
+```
 
 ### 2. Install Dependencies 
 
+```bash
 npm install
+```
 
 ### 3. Start Application
 
+```bash
 node index.js
+```
 The server should start on http://localhost:3000 and you should see the message:
 Server running on http://localhost:3000
 MongoDB connected
@@ -49,40 +54,58 @@ Request:
  - URL: http://localhost:3000/services
  - Method: POST
  - Body (JSON):
+   ```bash
     {
     "name": "Blood Test",
     "description": "Comprehensive blood analysis",
     "price": 75
     }
+   ```
  - Response:
-    Success: 201 Created with the newly added service object.
+   ```bash
+    {
+    "name": "Blood Test",
+    "description": "Comprehensive blood analysis",
+    "price": 75,
+    "_id": "670fceed897e8ad6aa44bc50",
+    "__v": 0
+   }
+   ```
 
 ### 2. Get All Services (GET /services)
 Request:
  - URL: http://localhost:3000/services
  - Method: GET
  - Response:
+   ```bash
     Success: 200 OK with an array of service objects.
+   ```
 
 ### 3. Update a Service (PUT /services/)
  - Request:
  - URL: http://localhost:3000/services/:id
  - Method: PUT
  - Body (JSON):
+   ```bash
     {
     "name": "Blood Test - Updated",
     "description": "Advanced blood test",
     "price": 100
     }
+   ```
  - Response:
+   ```bash
     Success: 200 OK with the updated service object.
+   ```
 
 ### 4. Delete a Service (DELETE /services/)
  - Request:
  - URL: http://localhost:3000/services/:id
  - Method: DELETE
  - Response:
+   ```bash
     Success: 200 OK with a message indicating the service was deleted.
+   ```
 
 ## ERROR Handling 
 The API will return appropriate HTTP status codes for various scenarios:
